@@ -2,7 +2,7 @@ import React from 'react';
 import './EventForm.css';
 import { useState } from 'react';
 
-export default function EventForm() {
+export default function EventForm({setDatas}) {
 
     function reset() {
         setTitle('');
@@ -17,7 +17,10 @@ export default function EventForm() {
             title: title,
             date: date,
         }
+
         console.log(formData);
+
+        setDatas(formData);
 
     }
 

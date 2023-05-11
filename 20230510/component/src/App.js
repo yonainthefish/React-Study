@@ -1,4 +1,39 @@
 import { useState } from "react";
+import Counter from "./components/Counter";
+
+function Hello(props) {
+  const name = props.name;
+  if (name) {
+    return <One name={name} />
+  } else {
+    return <Two />
+  }
+}
+
+function One(props) {
+  return (
+    <div>
+      <h1>{props.name}</h1>
+    </div>
+  )
+}
+
+function Two(props) {
+  return (
+    <div>
+      <h1>name이 입력된 것이 없습니다.</h1>
+    </div>
+  )
+}
+
+// function NoName() {
+//   return (
+//     <div>
+//       <h1>이름을 입력하지 않았습니다.</h1>
+//     </div>
+//   )
+// }
+
 
 
 function App() {
@@ -42,16 +77,16 @@ function App() {
 
   return (
     <div>
-        <Hello name='licat'/>
+      <Hello name="gary" />
 
 
-      {/* {datas.map((item, index) => {
+      {/* <Counter />
+      {datas.map((item, index) => {
         return (
           <li key={item.id}>
             <h2>{index + 1}{item.title}</h2>
             <span>{item.price} 원</span>
 
-            <button onClick={(event) => { event.target.closest('li').remove() }}>삭제</button>
             <button onClick={() => { handleClick(item.id) }}>삭제</button>
           </li>
         )

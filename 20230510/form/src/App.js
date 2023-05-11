@@ -6,13 +6,15 @@ function App() {
 
   const [datas, setDatas] = useState([]);
 
+
+  //datas 배열에 데이터를 추가하는 목적을 가지는 함수입니다. 
   const addData = (data) => {
     setDatas([...datas, data]);
   }
 
   return (
     <div>
-      <ItemGenerator/>
+      <ItemGenerator datas={addData}/>
       < EventForm setDatas={setDatas}/>
     </div>
   );
